@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,12 +23,13 @@ import com.kunatava.appointment.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-@RestController("clients")
+@RestController
+@RequestMapping("clients")
 public class ClientController {
 
 	private final ClientRepository clientRepository;
 
-	@GetMapping
+	@GetMapping("page")
 	public Page<Client> get(Pageable pageable) {
 		if (pageable != null) {
 			return clientRepository.findAll(pageable);

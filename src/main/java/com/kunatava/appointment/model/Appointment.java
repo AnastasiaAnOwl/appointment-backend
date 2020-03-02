@@ -15,7 +15,8 @@ public class Appointment {
 	@Id
 	private String id;
 	private Date start;
-	private BookingStatus status;
+	private AppointmentStatus status;
+	private String organization;
 	@DBRef
 	private Staff staff;
 	@DBRef

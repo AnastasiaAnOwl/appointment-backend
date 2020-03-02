@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kunatava.appointment.model.Organization;
@@ -18,7 +19,8 @@ import com.kunatava.appointment.repository.OrganizationRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-@RestController("organizations")
+@RestController
+@RequestMapping("organizations")
 public class OrganizationController {
 
 	/**

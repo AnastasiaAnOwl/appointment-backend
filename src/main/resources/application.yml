@@ -9,6 +9,21 @@ spring:
       database: appointmentsystem
       host: localhost
       port: 27017
+  profiles:
+    active:
+    - dev
       
 props:
   date-format: dd/MM/yyyy
+
+---
+spring:
+  profiles: dev
+mock-data:
+  organization-name: Example Org
+  address: Change me
+  staff-name: Nastenka
+  email: nastenka@mail.ru
+  password: 111
+  phone: 375291111111
+  
