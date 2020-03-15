@@ -10,4 +10,6 @@ public interface StaffRepository extends CrudRepository<Staff, String> {
 
 	List<Staff> findByOrganization(String organization);
 
+	Staff findByEmail(String email);
+
 }

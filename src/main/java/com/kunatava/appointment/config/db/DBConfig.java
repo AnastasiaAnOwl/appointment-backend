@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.kunatava.appointment.model.Organization;
 import com.kunatava.appointment.model.Staff;
@@ -20,6 +21,9 @@ public class DBConfig {
 
 	@Autowired
 	private MockDataConfiguration mockDataConfig;
+
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 
 	@Bean
 	public InitializingBean initDatabase(OrganizationRepository orgRepo, StaffRepository staffRepo) {
@@ -38,9 +42,12 @@ public class DBConfig {
 		return new Organization(null, mockDataConfig.getOrganizationName(), mockDataConfig.getAddress());
 	}
 
+	/**
+	 * Creating default adimin user with data from application.yml.
+	 */
 	private Staff getDefaultStaff(String organizationId) {
 		return new Staff(null, mockDataConfig.getStaffName(), mockDataConfig.getPhone(), mockDataConfig.getEmail(),
-				organizationId);
+				passwordEncoder.encode(mockDataConfig.getPassword()), organizationId, mockDataConfig.getAuthorities());
 	}
 
 	private boolean noOrganizations(OrganizationRepository orgRepo) {

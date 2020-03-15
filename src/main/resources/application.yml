@@ -26,4 +26,7 @@ mock-data:
   email: nastenka@mail.ru
   password: 111
   phone: 375291111111
+  authorities:
+  - ROLE_ADMIN
+  - ROLE_USER
   
