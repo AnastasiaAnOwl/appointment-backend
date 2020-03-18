@@ -4,11 +4,6 @@ server:
 spring:
   application:
     name: gateway
-  data: 
-    mongodb:
-      database: appointmentsystem
-      host: localhost
-      port: 27017
   profiles:
     active:
     - dev
