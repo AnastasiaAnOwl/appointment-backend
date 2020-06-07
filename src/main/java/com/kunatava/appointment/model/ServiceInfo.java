@@ -19,7 +19,7 @@ public class ServiceInfo {
 	private BigDecimal price;
 	private Integer duration;
 	@DBRef
-	private List<Resource> resoutces;
+	private List<Resource> resources;
 	private boolean staffRequired;
 
 }

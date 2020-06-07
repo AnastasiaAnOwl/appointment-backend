@@ -14,6 +14,9 @@ import org.springframework.context.event.EventListener;
 @SpringBootApplication
 public class AppointmentApplication {
 
+	@Value("${swagger.open:true}")
+	private Boolean open;
+
 	@Value("${server.port}")
 	private int port;
 
@@ -23,8 +26,11 @@ public class AppointmentApplication {
 
 	@EventListener({ ApplicationReadyEvent.class })
 	void applicationReadyEvent() {
-		System.out.println("Application started ... launching browser now");
-		browse("http://localhost:" + port + "/swagger-ui.html");
+		if (open) {
+			System.out.println("Application started ... launching browser now");
+			browse("http://localhost:" + port + "/swagger-ui.html");
+		}
+
 	}
 
 	public static void browse(String url) {

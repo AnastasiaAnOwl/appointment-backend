@@ -67,7 +67,7 @@ public class ClientController {
 
 	@GetMapping("search/findByNameOrPhone")
 	public Iterable<Client> findByNameOrPhone(@RequestParam String query) {
-		return findClients(query, PageRequest.of(0, 5));
+		return findClients(query, PageRequest.of(0, 5)).getContent();
 	}
 
 	private Page<Client> findClients(String query, Pageable pageable) {

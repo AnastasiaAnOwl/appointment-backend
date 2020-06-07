@@ -36,7 +36,7 @@ public class StaffController {
 	@PostMapping
 	public ResponseEntity<Staff> create(@RequestBody Staff staff) {
 		Staff created = staffRepository.save(staff);
-		return new ResponseEntity<>(staff, HttpStatus.CREATED);
+		return new ResponseEntity<>(created, HttpStatus.CREATED);
 	}
 
 	@PutMapping

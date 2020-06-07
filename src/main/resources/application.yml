@@ -24,4 +24,6 @@ mock-data:
   authorities:
   - ROLE_ADMIN
   - ROLE_USER
+swagger: 
+  open: false
   

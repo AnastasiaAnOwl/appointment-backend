@@ -23,7 +23,7 @@ public class ServiceController {
 	private final ServiceRepository serviceRepository;
 	private final CategoryRepository categoryRepository;
 
-	@PostMapping("category/{id}/service")
+	@PostMapping("categories/{id}/service")
 	public ResponseEntity<CategoryInfo> create(@PathVariable String id, @RequestBody ServiceInfo service) {
 		return categoryRepository.findById(id).map(category -> {
 			ServiceInfo saved = serviceRepository.save(service);
@@ -33,12 +33,12 @@ public class ServiceController {
 		}).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
 	}
 
-	@PutMapping("service")
+	@PutMapping("services")
 	public ServiceInfo update(@RequestBody ServiceInfo service) {
 		return serviceRepository.save(service);
 	}
 
-	@DeleteMapping("service/{id}")
+	@DeleteMapping("services/{id}")
 	public ResponseEntity<String> delete(@PathVariable String id) {
 		serviceRepository.deleteById(id);
 		return new ResponseEntity<>(id, HttpStatus.NO_CONTENT);
