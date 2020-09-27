@@ -11,3 +11,7 @@ If the previous step was successful run the following command
 ```
 java -jar target/gs-rest-service-0.1.0.jar
 ```
+
+
+### Basic Auth 
+Use `nastenka@mail.ru` as username and `111` as password
