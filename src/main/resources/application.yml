@@ -4,16 +4,10 @@ server:
 spring:
   application:
     name: gateway
-  profiles:
-    active:
-    - dev
       
 props:
   date-format: dd/MM/yyyy
 
----
-spring:
-  profiles: dev
 mock-data:
   organization-name: Example Org
   address: Change me
@@ -26,4 +20,5 @@ mock-data:
   - ROLE_USER
 swagger: 
   open: false
+
   
