@@ -17,7 +17,7 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<spingfox-swagger.version>2.9.2</spingfox-swagger.version>
+		<spingfox-swagger.version>2.10.0</spingfox-swagger.version>
 	</properties>
 
 	<dependencies>
